@@ -1,3 +1,3 @@
 export interface IChatRequestDTO {
-  prompt: string
+  prompt: string;
 }
