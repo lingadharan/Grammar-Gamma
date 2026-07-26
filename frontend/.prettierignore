@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+dist/
+build/
+.next/
+
+# Code coverage reports
+coverage/
+
+# System or lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
