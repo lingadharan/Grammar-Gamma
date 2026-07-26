@@ -11,8 +11,6 @@ export class ChatRepository {
   }
 
   async getAllChat(): Promise<IUserChat[]> {
-    return await userChat
-      .find({}, { _id: 0, request: 0, response: 0, createdAt: 1 })
-      .sort({ createdAt: 1 });
+    return await userChat.find({});
   }
 }
