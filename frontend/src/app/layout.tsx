@@ -2,6 +2,7 @@ import Header from '@/component/headerComponent';
 import './globals.css';
 import { Metadata } from 'next';
 import Footer from '@/component/footerComponent';
+import { ChatProvider } from '@/context/chat';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,9 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full bg-slate-950">
       <body className="h-full flex flex-col antialiased">
-        <Header />
-        <main className="flex-1 overflow-y-auto">{children}</main>
-        <Footer />
+        <ChatProvider>
+          <Header />
+          <main className="flex-1 overflow-y-auto">{children}</main>
+          <Footer />
+        </ChatProvider>
       </body>
     </html>
   );
