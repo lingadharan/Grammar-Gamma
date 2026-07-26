@@ -5,4 +5,14 @@ export class ChatRepository {
   async addUserChat(chat: IUserChat): Promise<IUserChat> {
     return await userChat.insertOne(chat);
   }
+
+  async getChatByID(_id: string): Promise<IUserChat | null> {
+    return await userChat.findById(_id);
+  }
+
+  async getAllChat(): Promise<IUserChat[]> {
+    return await userChat
+      .find({}, { _id: 0, request: 0, response: 0, createdAt: 1 })
+      .sort({ createdAt: 1 });
+  }
 }
