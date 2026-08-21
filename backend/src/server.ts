@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import router from './router/router.js';
 import dataBaseConnection from './config/db.js';
+import cors from 'cors';
 
 dotenv.config();
 dataBaseConnection();

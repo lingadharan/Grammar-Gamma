@@ -3,7 +3,7 @@ import { GetChatHistoryResponse } from '@/types/chat';
 import AIResponse from './chat/aiResponse';
 import UserRequest from './chat/userRequest';
 import { useChat } from '@/context/chat';
-import { useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 
 export default function HomeComponent() {
   const { userChat, setUserChat } = useChat();
@@ -35,10 +35,10 @@ export default function HomeComponent() {
       ) : (
         userChat.map((chat) => {
           return (
-            <>
+            <Fragment key={chat._id}>
               <UserRequest key={chat._id + 'request'} chat={chat} />
               <AIResponse key={chat._id + 'response'} chat={chat} />
-            </>
+            </Fragment>
           );
         })
       )}
